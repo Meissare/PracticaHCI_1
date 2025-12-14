@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filtros Interactivos y Botones 3D</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Eventos Interactivos y Filtros</h1>
+        <p class="subtitle">Explora los diferentes tamaños de texto y botones con estilo 3D.</p>
+    </header>
+
+    <div class="container">
+        <!-- Área de Filtros -->
+        <nav class="filter-nav">
+            <button class="filter-btn active" data-filter="all">Todos</button>
+            <button class="filter-btn" data-filter="tech">Tecnología</button>
+            <button class="filter-btn" data-filter="design">Diseño</button>
+            <button class="filter-btn" data-filter="music">Música</button>
+        </nav>
+
+        <!-- Contenedor de Elementos Filtrables -->
+        <div class="content-grid">
+            <!-- Elementos de Ejemplo -->
+            <div class="card tech">
+                <h2>Evento Tech</h2>
+                <p>Descripción del evento de tecnología. Texto de tamaño mediano.</p>
+                <button class="save-btn button-3d">Guardar Evento</button>
+            </div>
+
+            <div class="card design">
+                <h2>Conferencia de Diseño</h2>
+                <p class="large-text">Este texto es más grande. Se enfoca en UI/UX.</p>
+                <button class="save-btn button-3d">Guardar Evento</button>
+            </div>
+
+            <div class="card music">
+                <h2>Festival de Música</h2>
+                <p>Noche de concierto. Tamaño de texto normal.</p>
+                <button class="save-btn button-3d">Guardar Evento</button>
+            </div>
+
+             <div class="card tech">
+                <h3>Taller de Código</h3>
+                <p class="small-text">Texto pequeño para detalles adicionales.</p>
+                <button class="save-btn button-3d">Guardar Evento</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
