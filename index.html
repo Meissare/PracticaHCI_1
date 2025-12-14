@@ -1,113 +1,41 @@
-:root {
-    --color-primary: #4a00e0;
-    --color-secondary: #8e2de2;
-    --color-shadow: #3b00b0;
-    --card-bg: #fff;
-    --card-hover-shadow: 0 10px 20px rgba(0,0,0,0.2);
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventos Filtrados y Guardados</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Eventos de Ocio</h1>
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f4f8;
-    margin: 0;
-    padding: 20px;
-    color: #333;
-}
+        <!-- Controles de Filtro con botones 3D -->
+        <div class="filters">
+            <button class="filter-btn active" data-category="Todos">Todos</button>
+            <button class="filter-btn" data-category="Cine">Cine</button>
+            <button class="filter-btn" data-category="Teatro">Teatro</button>
+            <button class="filter-btn" data-category="Concierto">Conciertos</button>
+        </div>
 
-.container {
-    max-width: 900px;
-    margin: auto;
-}
+        <!-- Contenedor de Tarjetas de Eventos -->
+        <div class="event-cards-container">
+            <!-- Las tarjetas se generan aquí con JavaScript -->
+        </div>
 
-/* --- Estilos de Botones 3D (Filtros y Guardar) --- */
-.filter-btn, .save-btn {
-    padding: 12px 24px;
-    border: none;
-    border-radius: 8px;
-    font-weight: bold;
-    cursor: pointer;
-    margin: 5px;
-    /* Degradado de fondo */
-    background: linear-gradient(145deg, var(--color-primary), var(--color-secondary));
-    color: white;
-    box-shadow: 0 6px var(--color-shadow); /* La sombra simula la parte 3D inferior */
-    transform: translateY(0);
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
-    position: relative;
-    outline: none;
-}
+        <!-- Formulario para añadir nuevos eventos -->
+        <h2>Guardar Nuevo Evento</h2>
+        <form id="event-form">
+            <input type="text" id="event-title" placeholder="Título del evento" required>
+            <select id="event-category">
+                <option value="Cine">Cine</option>
+                <option value="Teatro">Teatro</option>
+                <option value="Concierto">Concierto</option>
+            </select>
+            <button type="submit" class="save-btn">Añadir y Guardar</button>
+        </form>
+    </div>
 
-.filter-btn:hover, .save-btn:hover {
-    /* Efecto hover: mover un poco hacia arriba */
-    transform: translateY(-2px);
-    box-shadow: 0 8px var(--color-shadow);
-}
-
-.filter-btn:active, .save-btn:active {
-    /* Efecto active (click/presionado): mover hacia abajo, ocultando la sombra 3D */
-    transform: translateY(4px);
-    box-shadow: 0 2px var(--color-shadow);
-}
-
-.filter-btn.active {
-    /* Estado activo seleccionado */
-    background: linear-gradient(145deg, var(--color-secondary), var(--color-primary));
-}
-
-/* --- Estilos del Contenedor de Tarjetas --- */
-.event-cards-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    margin-top: 20px;
-    justify-content: center;
-}
-
-/* --- Estilos de Tarjetas de Evento --- */
-.event-card {
-    background: var(--card-bg);
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    padding: 20px;
-    width: 200px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    opacity: 1;
-    display: block;
-}
-
-.event-card:hover {
-    transform: translateY(-5px); /* Efecto hover: elevar la tarjeta */
-    box-shadow: var(--card-hover-shadow);
-}
-
-.event-card.hidden {
-    display: none; /* Oculta las tarjetas que no coinciden con el filtro */
-}
-
-.event-card h3 {
-    margin: 0 0 10px 0;
-    color: var(--color-primary);
-}
-
-.event-card p {
-    margin: 0;
-    font-size: 0.9em;
-    color: #666;
-}
-
-/* --- Estilos del Formulario de Guardado --- */
-#event-form {
-    margin-top: 40px;
-    display: flex;
-    gap: 10px;
-    padding: 15px;
-    background: white;
-    border-radius: 8px;
-}
-
-#event-form input, #event-form select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    flex-grow: 1;
-}
+    <script src="script.js"></script>
+</body>
+</html>
