@@ -3,37 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos Filtrados y Guardados</title>
+    <title>Eventos con Filtros y Reserva</title>
     <link rel="stylesheet" href="style.css">
+    <link href="cdnjs.cloudflare.com" rel="stylesheet">
 </head>
 <body>
     <div class="container">
-        <h1>Eventos de Ocio</h1>
+        <h1>Buscador de Eventos</h1>
 
-        <!-- Controles de Filtro con botones 3D -->
-        <div class="filters">
-            <button class="filter-btn active" data-category="Todos">Todos</button>
-            <button class="filter-btn" data-category="Cine">Cine</button>
-            <button class="filter-btn" data-category="Teatro">Teatro</button>
-            <button class="filter-btn" data-category="Concierto">Conciertos</button>
+        <div class="filter-bar">
+            <div class="space-y-6">
+                <!-- Search Bar and City Selector -->
+                <div class="grid-cols-2 gap-4">
+                    <div class="input-group">
+                        <i class="fas fa-search icon"></i>
+                        <input type="text" id="search-events" placeholder="Buscar eventos...">
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-map-marker-alt icon"></i>
+                        <select id="select-city">
+                            <option value="Todos">Todas las ciudades</option>
+                            <option value="Madrid">Madrid</option>
+                            <option value="Barcelona">Barcelona</option>
+                            <option value="Valencia">Valencia</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Category Filters -->
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <i class="fas fa-filter icon-green"></i>
+                        <span class="category-label">Categorías</span>
+                    </div>
+                    <div class="flex-wrap gap-3" id="category-filters">
+                        <!-- Los botones se generarán con JS -->
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!-- Contenedor de Tarjetas de Eventos -->
-        <div class="event-cards-container">
-            <!-- Las tarjetas se generan aquí con JavaScript -->
+        <h2>Eventos Disponibles</h2>
+        <div class="event-cards-container" id="event-cards-container">
+            <!-- Las tarjetas se generarán con JS -->
         </div>
-
-        <!-- Formulario para añadir nuevos eventos -->
-        <h2>Guardar Nuevo Evento</h2>
-        <form id="event-form">
-            <input type="text" id="event-title" placeholder="Título del evento" required>
-            <select id="event-category">
-                <option value="Cine">Cine</option>
-                <option value="Teatro">Teatro</option>
-                <option value="Concierto">Concierto</option>
-            </select>
-            <button type="submit" class="save-btn">Añadir y Guardar</button>
-        </form>
     </div>
 
     <script src="script.js"></script>
